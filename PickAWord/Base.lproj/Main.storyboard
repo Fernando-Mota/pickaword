@@ -29,7 +29,7 @@
         <!--View Controller-->
         <scene sceneID="tVj-YB-Rf5">
             <objects>
-                <viewController id="TY8-0f-BFq" sceneMemberID="viewController">
+                <viewController id="TY8-0f-BFq" customClass="ViewController" customModule="PickAWord" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PBI-J0-Ccx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -40,10 +40,16 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1UT-Hh-7pj">
                                         <rect key="frame" x="0.0" y="25" width="160" height="30"/>
                                         <state key="normal" title="Pick a Word"/>
+                                        <connections>
+                                            <action selector="pickAWord:" destination="TY8-0f-BFq" eventType="touchUpInside" id="fmJ-hU-Kcv"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="25i-vQ-fee">
                                         <rect key="frame" x="160" y="25" width="160" height="30"/>
                                         <state key="normal" title="Clear"/>
+                                        <connections>
+                                            <action selector="clear:" destination="TY8-0f-BFq" eventType="touchUpInside" id="bFe-7R-eJ3"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -70,15 +76,18 @@
                         <viewLayoutGuide key="safeArea" id="rtO-0S-PzF"/>
                     </view>
                     <navigationItem key="navigationItem" id="LkP-zL-gPn"/>
+                    <connections>
+                        <outlet property="textView" destination="tmR-KY-gyY" id="qiR-de-PnH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ff6-GD-av0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="905.625" y="128.87323943661971"/>
         </scene>
-        <!--View Controller-->
+        <!--Pick Controller-->
         <scene sceneID="vIE-Pf-Ki0">
             <objects>
-                <viewController id="XJA-A8-mxm" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PickController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XJA-A8-mxm" customClass="PickController" customModule="PickAWord" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ijy-qu-t6W">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -155,6 +164,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Mjx-7j-Ddx"/>
                     </view>
+                    <connections>
+                        <outlet property="wordFive" destination="CSN-um-vtp" id="CNk-d9-llL"/>
+                        <outlet property="wordFour" destination="ovH-w4-o5u" id="BeU-uJ-swe"/>
+                        <outlet property="wordOne" destination="oXe-sq-qYW" id="D4G-3j-wv4"/>
+                        <outlet property="wordSix" destination="2zp-uu-GCQ" id="QpP-Ug-lmW"/>
+                        <outlet property="wordThree" destination="sSn-xF-CX0" id="hMn-HO-Pm8"/>
+                        <outlet property="wordTwo" destination="mY7-Wp-C1g" id="abA-KP-cPM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Swp-ob-6iU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
