@@ -15,11 +15,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        words.append("Teste")
-        words.append("dessa")
-        words.append("budega")
-        updateTextView()
     }
 
     func updateTextView() {
@@ -32,9 +27,21 @@ class ViewController: UIViewController {
     
     @IBAction func pickAWord(_ sender: UIButton) {
         let pickController = storyboard?.instantiateViewController(withIdentifier: "PickController") as! PickController
+        
+        pickController.pickDelegate = self
+        
         guard let navigation = navigationController else {return}
         
         navigation.pushViewController(pickController, animated: true)
     }
 }
+
+extension ViewController: PickDelegate {
+    func pick(word: String) {
+        words.append(word)
+        
+        updateTextView()
+    }
+}
+
 

@@ -17,7 +17,7 @@ class PickController: UIViewController {
     @IBOutlet weak var wordFive: UILabel!
     @IBOutlet weak var wordSix: UILabel!
     
-    
+    var pickDelegate: PickDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,7 @@ class PickController: UIViewController {
     
     
     @objc func pickedWord(sender: UITapGestureRecognizer) {
-       print((sender.view as! UILabel).text ?? "None")
+        pickDelegate?.pick(word: (sender.view as! UILabel).text ?? "None")
     }
 
 
