@@ -38,14 +38,16 @@
                                 <rect key="frame" x="0.0" y="488" width="320" height="80"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1UT-Hh-7pj">
-                                        <rect key="frame" x="0.0" y="25" width="160" height="30"/>
+                                        <rect key="frame" x="0.0" y="19" width="160" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="Pick a Word"/>
                                         <connections>
                                             <action selector="pickAWord:" destination="TY8-0f-BFq" eventType="touchUpInside" id="fmJ-hU-Kcv"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="25i-vQ-fee">
-                                        <rect key="frame" x="160" y="25" width="160" height="30"/>
+                                        <rect key="frame" x="160" y="19" width="160" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="Clear"/>
                                         <connections>
                                             <action selector="clear:" destination="TY8-0f-BFq" eventType="touchUpInside" id="bFe-7R-eJ3"/>
@@ -59,7 +61,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tmR-KY-gyY">
                                 <rect key="frame" x="0.0" y="64" width="320" height="424"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>

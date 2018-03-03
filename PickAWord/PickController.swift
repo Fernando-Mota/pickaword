@@ -8,6 +8,9 @@
 
 import UIKit
 
+//MARK: 1
+import RxSwift
+
 class PickController: UIViewController {
     
     @IBOutlet weak var wordOne: UILabel!
@@ -17,7 +20,8 @@ class PickController: UIViewController {
     @IBOutlet weak var wordFive: UILabel!
     @IBOutlet weak var wordSix: UILabel!
     
-    
+    //MARK: 2
+    let selectedWord = PublishSubject<String>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,26 +31,13 @@ class PickController: UIViewController {
     
     
     @objc func pickedWord(sender: UITapGestureRecognizer) {
-       print((sender.view as! UILabel).text ?? "None")
+        //MARK: 3
+        selectedWord.onNext((sender.view as! UILabel).text ?? "None")
     }
 
-
-}
-
-extension PickController {
-    fileprivate func setupTapActions() {
-        wordOne.isUserInteractionEnabled = true
-        wordTwo.isUserInteractionEnabled = true
-        wordThree.isUserInteractionEnabled = true
-        wordFour.isUserInteractionEnabled = true
-        wordFive.isUserInteractionEnabled = true
-        wordSix.isUserInteractionEnabled = true
-        
-        wordOne.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(PickController.pickedWord)))
-        wordTwo.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(PickController.pickedWord)))
-        wordThree.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(PickController.pickedWord)))
-        wordFour.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(PickController.pickedWord)))
-        wordFive.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(PickController.pickedWord)))
-        wordSix.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(PickController.pickedWord)))
+    override func viewWillDisappear(_ animated: Bool) {
+        //MARK: 4
+        selectedWord.onCompleted()
     }
+
 }
